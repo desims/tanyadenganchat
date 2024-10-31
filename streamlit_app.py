@@ -23,13 +23,7 @@ def load_data():
     Settings.llm = OpenAI(
         model="gpt-3.5-turbo",
         temperature=0.2,
-        system_prompt="""You are an expert on 
-        the Streamlit Python library and your 
-        job is to answer technical questions. 
-        Assume that all questions are related 
-        to the Streamlit Python library. Keep 
-        your answers technical and based on 
-        facts – do not hallucinate features.""",
+        system_prompt="""Kamu adalah asisten untuk membantu mahasiswa Telkom dalam menjawab pertanyaan mengenai pedoman penulisan tugas akhir. Asumsikan bahwa semua pertanyaan berhubungan dengan pedoman penulisan tugas akhir. Jawablah dengan teknik penulisan skripsi yang sesuai pedoman dan hindari memberikan informasi yang tidak ada di pedoman.""",
     )
     index = VectorStoreIndex.from_documents(docs)
     return index
